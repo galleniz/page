@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <!-- Cada treinta segundos actualizará -->
-    <meta HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html">
+    <meta HTTP-EQUIV="REFRESH" CONTENT="30;URL=index.html?isalt=false">
 
     <title>Just a Coco Page</title>
     <link rel="icon" type="image/png" href="favicon.png">
@@ -19,7 +19,17 @@
     }
   </style>
   <!-- Script que pondrá una imagen aleatoria -->
-  <script language="JavaScript"> document.write("<img class=img src=img/coco"+ Math.floor(Math.random() * 5)  +".jpg>");</script>
+
+  <script language="JavaScript">
+        const BuscarParametrosDelUrl = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(BuscarParametrosDelUrl.entries());
+    if (params.isalt != null && params.isalt === "true")
+        document.write("<img class=img src=img/alt/"+ Math.floor(Math.random() * 2)  +".jpg>");
+    else
+        document.write("<img class=img src=img/coco"+ Math.floor(Math.random() * 5)  +".jpg>");
+
+
+   </script>
 
 </head>	
 </html>
