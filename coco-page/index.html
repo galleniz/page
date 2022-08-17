@@ -18,16 +18,8 @@
     position: absolute;
     }
   </style>
-  <!-- Script que pondrá una imagen aleatoria -->
 
-  <script language="JavaScript">
-        const BuscarParametrosDelUrl = new URLSearchParams(window.location.search);
-    const params = Object.fromEntries(BuscarParametrosDelUrl.entries());
-    if (params.isalt != null && params.isalt === "true")
-        document.write("<img class=img src=img/alt/"+ Math.floor(Math.random() * 2)  +".jpg>");
-    else
-        document.write("<img class=img src=img/coco"+ Math.floor(Math.random() * 5)  +".jpg>");
-
+  <script src="main.js">
 
    </script>
 
