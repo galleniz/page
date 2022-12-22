@@ -1,13 +1,19 @@
 <html style="
     background-color: black;
-"><head></head>
+"><head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
 
 <body>
-    <div id="twitch-embed"></div>
-
+<div id="twitch-embed"></div>
+<div id="chat"><ul></ul></div>
+    
 <!-- Load the embed m -->
 <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 <!-- Load the channel!! -->
+ <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
 <script type="text/javascript">
   new Twitch.Player("twitch-embed", {
     channel: "jskiddyj",
@@ -15,15 +21,22 @@
     height: "100%",
     theme: "dark",
   });
-  
+  ComfyJS.onChat = (user, message, flags, self, extra) => {
+        console.log(user, message);
+     ComfyJS.width = "100%";
+     ComfyJS.height = "60%";
+}
+
+ComfyJS.Init("JSkiddyJ");
 </script>
 
 <!-- <body onload="onLoad();"></body> -->
 <!-- xd -->
-<iframe id="twitch-chat-embed"
-        src="https://www.twitch.tv/embed/jskiddyj/chat?parentmrniz.github.io"
-        height="75%"
-        width="100%">
-</iframe>
+<!--  https://dev.to/annetawamono/how-to-build-a-twitch-chat-overlay-326b    -->
+
+<!--  Open the script    -->
+
+  
 </body>
+    
 </html>
